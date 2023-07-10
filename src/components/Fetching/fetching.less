@@ -1,0 +1,30 @@
+.fetching-wrapper{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.fetching-container{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  border: 2px dashed black;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  animation-name: search-fetching-container;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@keyframes search-fetching-container{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

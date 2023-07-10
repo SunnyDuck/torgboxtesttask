@@ -1,0 +1,37 @@
+.clock{
+  width: 200px;
+  height: 200px;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clockCenter{
+  width: 13px;
+  height: 13px;
+  background-color: black;
+  position: absolute;
+  border-radius: 100%;
+}
+
+.clock .number{
+  position: absolute;
+  text-align: center;
+  width: 195px;
+  height: 195px;
+}
+
+@number-name: number;
+@numbers-count: 12;
+
+.generate-numbers(@i: 1) when (@i =< @numbers-count){
+  .@{number-name}-@{i} {
+    rotate: @i * 30deg;
+  }
+
+  .generate-numbers(@i + 1)
+}
+
+.generate-numbers();
