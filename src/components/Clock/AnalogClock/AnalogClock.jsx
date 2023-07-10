@@ -3,16 +3,17 @@ import './analogClock.less'
 import HourArrow from "../Arrows/HourArrow/HourArrow";
 import MinuteArrow from "../Arrows/MinuteArrow/MinuteArrow";
 import SecondArrow from "../Arrows/SecondArrow/SecondArrow";
+import {useDispatch, useSelector} from "react-redux";
+import {setNewTime} from "../../../redux/reducers/timezonesReducer";
 
 
 const AnalogClock = (props) => {
 
-
-    const [time, setTime] = React.useState(new Date())
+    const dispatch = useDispatch();
 
     React.useEffect(() => {
         const interval = setInterval(() => {
-            setTime(new Date())
+            dispatch(setNewTime())
         }, 1000)
         return () => clearInterval(interval)
     }, [])

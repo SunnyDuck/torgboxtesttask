@@ -1,11 +1,13 @@
 const SET_TIMEZONES = 'SET_TIMEZONES'
 const SET_SELECTED_TIMEZONE = 'SET_SELECTED_TIMEZONE'
 const SET_IF_FETCHING = 'SET_IF_FETCHING'
+const SET_NEW_TIME = 'SET_NEW_TIME'
 
 const defaultState = {
     items: [],
     isFetching: true,
-    selectedItem: []
+    selectedItem: [],
+    time: new Date()
 }
 
 export default function timezonesReducer(state = defaultState, action){
@@ -26,6 +28,11 @@ export default function timezonesReducer(state = defaultState, action){
                 ...state,
                 isFetching: action.payload
             }
+        case SET_NEW_TIME:
+            return {
+                ...state,
+                time: new Date()
+            }
         default:
             return state
     }
@@ -41,4 +48,8 @@ export const setIsFetching  = (bool) => (
 
 export const setSelectedTimezone  = (timezone) => (
     {type:  SET_SELECTED_TIMEZONE, payload: timezone}
+)
+
+export const setNewTime  = () => (
+    {type:  SET_NEW_TIME}
 )
