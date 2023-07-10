@@ -29,7 +29,7 @@ const Main = React.memo((props) => {
             <AnalogClock gmt = {timezone}/>
             <DigitalClock gmt = {timezone}/>
             {
-                switchSelect === true
+                switchSelect
                 ?
                     <Select
                         options={props.timezones}
