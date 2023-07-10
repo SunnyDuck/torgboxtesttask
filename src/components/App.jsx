@@ -29,14 +29,15 @@ const App = () => {
             {
                 isFetching === false
                 ?
-                    <div className={'app-container'}>
-                        <button onClick= {addClock}>Добавить часы</button>
-                        <div></div>
-                        {clock.map((item) => {
-                            return(
-                                <Main key={item} timezones = {timezones}/>
-                            )
-                        })}
+                    <div>
+                        <button onClick={addClock} className={'addClockBtn'}>Добавить часы</button>
+                        <div className={'app-container'}>
+                            {clock.map((item) => {
+                                return(
+                                    <Main key={item} timezones={timezones}/>
+                                )
+                            })}
+                        </div>
                     </div>
                 :
                     <Fetching />

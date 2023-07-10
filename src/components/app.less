@@ -5,9 +5,29 @@
   flex-wrap: wrap;
 }
 
+
 .app-container{
   width: 500px;
   display: grid;
   grid-template-areas: "a a " "b c";
   grid-gap: 100px;
+  margin-top: 50px;
+}
+
+.addClockBtn{
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: white;
+  border-color: rgb(229, 229, 229);
+  border-style: solid;
+  cursor: pointer;
+}
+
+@media (max-width: 510px) {
+  .app-container{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
 }
