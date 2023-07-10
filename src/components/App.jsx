@@ -18,16 +18,16 @@ const App = () => {
 
     const addClock = () => {
         clock.length === 0
-        ?
-            setClock([...clock, 1])
-        :
-            setClock([...clock, clock[clock.length-1]+1])
+            ?
+            setClock((prev) => [...prev, 1])
+            :
+            setClock((prev) => [...prev, prev.at(-1)+1])
     };
 
     return (
         <div className={'app-wrapper'}>
             {
-                isFetching === false
+                !isFetching
                 ?
                     <div>
                         <button onClick={addClock} className={'addClockBtn'}>Добавить часы</button>
