@@ -12,8 +12,7 @@ const AnalogClock = (props) => {
 
     React.useEffect(() => {
         const interval = setInterval(() => {
-            const now = new Date()
-            setTime(now)
+            setTime(new Date())
         }, 1000)
         return () => clearInterval(interval)
     }, [])

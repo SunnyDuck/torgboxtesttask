@@ -2,7 +2,7 @@ import React from 'react';
 import './app.less'
 import Main from "./Main/Main";
 import {useDispatch, useSelector} from "react-redux";
-import {getTimezones} from "./actions/timezones";
+import {getTimezones} from "../redux/actions/timezones";
 import Fetching from "./Fetching/Fetching";
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
             setClock([...clock, 1])
         :
             setClock([...clock, clock[clock.length-1]+1])
-    }
+    };
 
     return (
         <div className={'app-wrapper'}>
@@ -30,11 +30,11 @@ const App = () => {
                 isFetching === false
                 ?
                     <div className={'app-container'}>
-                        <button onClick={() => {addClock()}}>Добавить часы</button>
+                        <button onClick= {addClock}>Добавить часы</button>
                         <div></div>
-                        {clock.map(() => {
+                        {clock.map((item) => {
                             return(
-                                <Main timezones = {timezones}/>
+                                <Main key={item} timezones = {timezones}/>
                             )
                         })}
                     </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import {setIsFetching, setTimezones} from "../../reducers/timezonesReducer";
+import {setIsFetching, setTimezones} from "../reducers/timezonesReducer";
 
 const timezonesArr = []
 

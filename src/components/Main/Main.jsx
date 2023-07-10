@@ -4,7 +4,7 @@ import Select from "react-select";
 import AnalogClock from "../Clock/AnalogClock/AnalogClock";
 import DigitalClock from "../Clock/DigitalClock/DigitalClock";
 import {useDispatch, useSelector} from "react-redux";
-import {setSelectedTimezone} from "../../reducers/timezonesReducer";
+import {setSelectedTimezone} from "../../redux/reducers/timezonesReducer";
 
 const Main = React.memo((props) => {
 
