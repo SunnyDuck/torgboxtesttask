@@ -1,6 +1,7 @@
 import React from 'react';
 import './minuteArrow.less'
 
+
 const MinuteArrow = () => {
 
     const time = new Date()

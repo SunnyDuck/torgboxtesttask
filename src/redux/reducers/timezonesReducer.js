@@ -5,7 +5,7 @@ const SET_IF_FETCHING = 'SET_IF_FETCHING'
 const defaultState = {
     items: [],
     isFetching: true,
-    selectedItem: [],
+    selectedItem: []
 }
 
 export default function timezonesReducer(state = defaultState, action){
